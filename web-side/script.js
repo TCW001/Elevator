@@ -35,3 +35,12 @@ window.addEventListener("message", function(event) {
     document.body.style.display = "none";
   }
 });
+
+window.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    fetch(`https://${GetParentResourceName()}/close`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" }
+    });
+  }
+});
