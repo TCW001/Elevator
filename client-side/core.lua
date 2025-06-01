@@ -54,3 +54,9 @@ RegisterNUICallback("goToFloor", function(data, cb)
 
     cb("ok")
 end)
+
+RegisterNUICallback("close", function(_, cb)
+	SetNuiFocus(false, false)
+	SendNUIMessage({ action = "close" })
+	cb("ok")
+end)
